@@ -1,0 +1,549 @@
+<html>
+ <head>  
+ </head> 
+ <body>
+   &lt;/ 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>JSDS Inter College – Haroda, Hapur</title> 
+  <meta name="description" content="JSDS Inter College, Village Haroda, District Hapur 245207, Uttar Pradesh. Principal: Mr. Ankur Thakur. Established 2003. Quality education, UP Board affiliated."> 
+  <style>
+/* ============ RESET & BASE ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;background:#f5f8ff;color:#1b2a4e;}
+
+/* ============ THEME ============ */
+:root{
+  --primary:#004aad;
+  --primary-2:#0b6bff;
+  --ink:#10213a;
+  --bg:#f5f8ff;
+  --card:#ffffff;
+  --accent:#ffb703;
+  --muted:#6b7a99;
+  --ring: 0 10px 30px rgba(0,0,0,.08);
+  --ring-strong: 0 12px 40px rgba(0,0,0,.12);
+}
+
+/* ============ UTILS ============ */
+.container{max-width:1100px;margin:auto;padding:0 18px}
+.section{padding:64px 0}
+.h1{font-size:clamp(28px,4.2vw,46px);font-weight:800;line-height:1.1;letter-spacing:.2px}
+.h2{font-size:clamp(22px,3.4vw,34px);font-weight:800;color:var(--primary);margin-bottom:18px}
+.lead{font-size:1.1rem;color:var(--muted)}
+.btn{display:inline-flex;gap:10px;align-items:center;border:none;cursor:pointer;padding:12px 18px;border-radius:12px;font-weight:700;transition:.2s;box-shadow:var(--ring);background:var(--primary);color:#fff}
+.btn:hover{transform:translateY(-1px);box-shadow:var(--ring-strong);background:var(--primary-2)}
+.btn.ghost{background:#fff;color:var(--primary);border:2px solid var(--primary)}
+.tag{display:inline-block;background:#e9f1ff;color:#0b3c91;padding:6px 10px;border-radius:999px;font-size:.85rem;font-weight:700}
+
+/* ============ TOP BAR ============ */
+.topbar{background:var(--ink);color:#cfe0ff;font-size:.95rem}
+.topbar .container{display:flex;gap:12px;justify-content:space-between;padding:10px 18px}
+.topbar a{color:#cfe0ff;text-decoration:none}
+
+/* ============ NAV ============ */
+nav{position:sticky;top:0;z-index:50;background:#ffffffcc;backdrop-filter:saturate(180%) blur(8px);border-bottom:1px solid #e8eefc}
+.navwrap{display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:900;color:var(--primary)}
+.logo{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--primary),var(--primary-2));display:grid;place-items:center;color:#fff;font-weight:900}
+.menu{display:flex;gap:18px;flex-wrap:wrap}
+.menu a{color:var(--ink);text-decoration:none;font-weight:700}
+.menu a:hover{color:var(--primary)}
+@media(max-width:720px){.menu{display:none}.menu.open{display:flex;flex-direction:column;width:100%;padding:10px 0}}
+.burger{display:none}
+@media(max-width:720px){.burger{display:inline-flex}}
+
+/* ============ HERO (SLIDESHOW) ============ */
+.hero{position:relative;overflow:hidden;background:#001b4d;color:#fff}
+.slider{position:relative;height:64vh;min-height:420px}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 800ms ease}
+.slide.active{opacity:1}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.55))}
+.herocontent{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:0 18px}
+.herobox{max-width:900px}
+.herobox .h1{color:#fff}
+.hero .cta{margin-top:16px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:#ffffff88;border:1px solid #fff;cursor:pointer}
+.dot.active{background:#fff}
+
+/* ============ ABOUT ============ */
+.about{background:var(--bg)}
+.kv{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+@media(max-width:860px){.kv{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:18px;box-shadow:var(--ring);padding:20px}
+
+/* ============ FACILITIES GRID ============ */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}}
+.fac{padding:20px;border-radius:16px;background:#fff;box-shadow:var(--ring)}
+.fac h3{color:var(--primary);margin:8px 0}
+
+/* ============ FEATURES STRIP ============ */
+.features{background:#0e2a66;color:#e8f0ff}
+.featurewrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.featurewrap{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.featurewrap{grid-template-columns:1fr}}
+.feature{background:#0b2257;border:1px solid #1b3d92;border-radius:14px;padding:18px}
+.feature h4{color:#fff;margin-bottom:6px}
+
+/* ============ PRINCIPAL ============ */
+.principal{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:center}
+@media(max-width:900px){.principal{grid-template-columns:1fr}}
+.avatar{width:100%;aspect-ratio:4/3;border-radius:18px;background:linear-gradient(135deg,#89c2ff,#004aad);display:grid;place-items:center;color:#fff;font-weight:900;font-size:38px;}
+
+/* ============ CONTACT ============ */
+form{display:grid;gap:12px}
+input,textarea,select{width:100%;padding:12px 14px;border:1px solid #d8e2ff;border-radius:12px;font:inherit}
+input:focus,textarea:focus,select:focus{outline:3px solid #e1ecff;border-color:#a4c2ff}
+.formrow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.formrow{grid-template-columns:1fr}}
+.success{display:none;margin-top:8px;color:#0a8a4b;font-weight:700}
+
+/* ============ FOOTER ============ */
+footer{background:#081d44;color:#cfe0ff}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:18px}
+@media(max-width:860px){.foot{grid-template-columns:1fr}}
+small,footer a{color:#cfe0ff;text-decoration:none}
+
+/* ============ CHATBOT (AI Assistant) ============ */
+#aiBtn{position:fixed;right:18px;bottom:18px;border-radius:999px;width:56px;height:56px;display:grid;place-items:center;font-size:20px}
+.chat{position:fixed;right:18px;bottom:86px;width:min(420px,92vw);background:#fff;border:1px solid #e6edff;border-radius:16px;box-shadow:var(--ring-strong);display:none;flex-direction:column;overflow:hidden}
+.chat header{background:linear-gradient(90deg,var(--primary),var(--primary-2));color:#fff;padding:12px 14px;display:flex;align-items:center;justify-content:space-between}
+.chat main{padding:12px;max-height:54vh;overflow:auto;display:flex;flex-direction:column;gap:10px}
+.msg{padding:10px 12px;border-radius:12px;max-width:88%}
+.msg.bot{background:#f0f5ff;border:1px solid #dfe8ff}
+.msg.user{background:#e9fff4;border:1px solid #ccf3e1;margin-left:auto}
+.chat footer{padding:10px;display:flex;gap:8px;border-top:1px solid #eef3ff}
+.chat input{flex:1}
+.toolrow{display:flex;gap:8px;align-items:center;font-size:.9rem}
+.lang{margin-left:auto}
+.voice{cursor:pointer}
+
+/* Fancy little pulse for AI button */
+#aiBtn::after{content:"";position:absolute;inset:-8px;border-radius:999px;border:2px solid #cfe0ff;animation:pulse 1600ms ease-in-out infinite;opacity:.7}
+@keyframes pulse{0%{transform:scale(.9)}50%{transform:scale(1)}100%{transform:scale(.9)}}
+</style> 
+  <!-- ===== Top bar ===== --> 
+  <div class="topbar"> 
+   <div class="container"> 
+    <div>
+      📍 Village Haroda, District Hapur 245207, Uttar Pradesh (UP Board Affiliated) 
+    </div> 
+    <div>
+      📞 +91 9917094562 / +91 87555 95951 
+    </div> 
+   </div> 
+  </div> 
+  <!-- ===== Nav ===== --> 
+  <nav> 
+   <div class="container navwrap"> 
+    <div class="brand"> 
+     <div class="logo">
+       J 
+     </div> JSDS Inter College 
+    </div> 
+    <button class="btn ghost burger" id="burger">☰ Menu</button> 
+    <div class="menu" id="menu"> 
+     <a href="#about">About</a> 
+     <a href="#facilities">Facilities</a> 
+     <a href="#features">Highlights</a> 
+     <a href="#principal">Principal</a> 
+     <a href="#admissions">Admissions</a> 
+     <a href="#contact">Contact</a> 
+    </div> 
+   </div> 
+  </nav> 
+  <!-- ===== HERO: slideshow ===== --> 
+  <section class="hero"> 
+   <div class="slider" id="slider"> 
+    <!-- Replace backgrounds with your photos later (just change the image URLs) --> 
+    <div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&amp;w=1400&amp;auto=format&amp;fit=crop');"></div> 
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1588075592405-246e0b7b6b4b?q=80&amp;w=1400&amp;auto=format&amp;fit=crop');"></div> 
+    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&amp;w=1400&amp;auto=format&amp;fit=crop');"></div> 
+   </div> 
+   <div class="herocontent"> 
+    <div class="herobox container"> 
+     <span class="tag">Since 2003 • Principal: Mr. Ankur Thakur</span> 
+     <h1 class="h1" style="margin-top:10px">Quality Education • Character • Excellence</h1> 
+     <p class="lead" style="margin-top:10px">Nurturing future leaders with experienced and qualified teachers, strong discipline, value education, and excellent UP Board results.</p> 
+     <div class="cta"> 
+      <a href="#admissions" class="btn">🎓 Admissions</a> 
+      <a href="#facilities" class="btn ghost">🏫 Explore Campus</a> 
+     </div> 
+    </div> 
+    <div class="dots" id="dots"></div> 
+   </div> 
+  </section> 
+  <!-- ===== ABOUT ===== --> 
+  <section id="about" class="about section"> 
+   <div class="container kv"> 
+    <div> 
+     <h2 class="h2">About JSDS Inter College</h2> 
+     <p class="lead">Established in <b>2003</b> in <b>Village Haroda</b>, <b>District Hapur</b>, JSDS Inter College is committed to inclusive and holistic education. Our mission is to build strong fundamentals, critical thinking, and moral values.</p> 
+     <div class="card" style="margin-top:14px"> 
+      <b>Affiliation:</b> Uttar Pradesh Board (UPMSP) 
+      <br> 
+      <b>Medium:</b> Hindi &amp; English 
+      <br> 
+      <b>Streams:</b> Science, Commerce, Arts (Intermediate) 
+      <br> 
+      <b>School Hours:</b> 8:00 AM – 2:00 PM (Mon–Sat) 
+     </div> 
+    </div> 
+    <div class="card"> 
+     <h3 class="h2">Key Statistics</h3> 
+     <ul class="lead" style="margin-left:16px;line-height:1.9"> 
+      <li>Student-centric pedagogy with continuous assessment</li> 
+      <li>Regular doubt classes &amp; mentoring</li> 
+      <li>Scholarships for meritorious students</li> 
+      <li>Parent-Teacher meetings every term</li> 
+     </ul> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== FACILITIES ===== --> 
+  <section id="facilities" class="section"> 
+   <div class="container"> 
+    <h2 class="h2" style="text-align:center">Facilities</h2> 
+    <p class="lead" style="text-align:center">Everything students need to learn, practice, and grow with confidence.</p> 
+    <div class="grid" style="margin-top:18px"> 
+     <div class="fac"> 
+      <h3>Spacious Classrooms</h3> 
+      <p>Bright, well-ventilated rooms with modern boards and projectors.</p> 
+     </div> 
+     <div class="fac"> 
+      <h3>Library &amp; Digital Resources</h3> 
+      <p>Wide range of reference books, newspapers, and e-learning kiosks.</p> 
+     </div> 
+     <div class="fac"> 
+      <h3>Science Laboratories</h3> 
+      <p>Fully equipped Physics, Chemistry, and Biology labs for hands-on learning.</p> 
+     </div> 
+     <div class="fac"> 
+      <h3>Computer Lab</h3> 
+      <p>Updated systems, internet access, and coding fundamentals.</p> 
+     </div> 
+     <div class="fac"> 
+      <h3>Sports &amp; Athletics</h3> 
+      <p>Cricket, football, athletics, and indoor games for fitness &amp; teamwork.</p> 
+     </div> 
+     <div class="fac"> 
+      <h3>Safe Transport</h3> 
+      <p>Reliable bus routes covering nearby villages and town areas.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== HIGHLIGHTS ===== --> 
+  <section id="features" class="features section"> 
+   <div class="container"> 
+    <h2 class="h2" style="color:#fff;text-align:center">Why Choose Us</h2> 
+    <div class="featurewrap" style="margin-top:10px"> 
+     <div class="feature"> 
+      <h4>Experienced Teachers</h4> 
+      <p>Qualified, caring faculty with strong subject expertise.</p> 
+     </div> 
+     <div class="feature"> 
+      <h4>Value Education</h4> 
+      <p>Discipline, respect, and ethics integrated into daily routine.</p> 
+     </div> 
+     <div class="feature"> 
+      <h4>Exam Readiness</h4> 
+      <p>Board-focused preparation and consistent past performance.</p> 
+     </div> 
+     <div class="feature"> 
+      <h4>Co-curricular</h4> 
+      <p>Debates, NCC/NSS drives, cultural events, and awareness camps.</p> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== PRINCIPAL MESSAGE ===== --> 
+  <section id="principal" class="section"> 
+   <div class="container principal"> 
+    <div class="avatar">
+      AT 
+    </div> 
+    <div> 
+     <h2 class="h2">From the Principal’s Desk</h2> 
+     <p class="lead"><b>Mr. Ankur Thakur</b>, Principal</p> 
+     <div class="card" style="margin-top:10px"> 
+      <p>“At JSDS Inter College, we believe education is the art of shaping character and competence together. Our staff works tirelessly to ensure every learner receives attention, guidance, and opportunities to excel in academics and life.”</p> 
+     </div> 
+     <button class="btn" id="ttsPrincipal" style="margin-top:10px">🔊 Hear this</button> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== ADMISSIONS (with AI helper) ===== --> 
+  <section id="admissions" class="about section"> 
+   <div class="container"> 
+    <h2 class="h2" style="text-align:center">Admissions 2025–26</h2> 
+    <p class="lead" style="text-align:center">Submit your interest. Our team will call you back.</p> 
+    <div class="card" style="margin-top:16px"> 
+     <form id="adForm"> 
+      <div class="formrow"> 
+       <div> 
+        <label>Student Name</label> 
+        <input required name="name" placeholder="Full name"> 
+       </div> 
+       <div> 
+        <label>Class Applying For</label> 
+        <select name="class" required> <option value="">Select</option> <option>6</option><option>7</option><option>8</option> <option>9</option><option>10</option> <option>11 (Science)</option><option>11 (Commerce)</option><option>11 (Arts)</option> <option>12 (Science)</option><option>12 (Commerce)</option><option>12 (Arts)</option> </select> 
+       </div> 
+      </div> 
+      <div class="formrow"> 
+       <div> 
+        <label>Parent Mobile</label> 
+        <input required name="phone" placeholder="+91 XXXXX XXXXX" pattern="[0-9 +]{10,13}"> 
+       </div> 
+       <div> 
+        <label>Preferred Language</label> 
+        <select name="lang"><option value="en">English</option><option value="hi">हिंदी</option></select> 
+       </div> 
+      </div> 
+      <div> 
+       <label>Notes (optional)</label> 
+       <textarea name="notes" rows="4" placeholder="Any questions or details…"></textarea> 
+      </div> 
+      <div class="toolrow"> 
+       <button type="button" class="btn ghost" id="aiSuggest">✨ AI Fill</button> 
+       <button class="btn" type="submit">📩 Submit</button> 
+       <span class="success" id="adSuccess">Thanks! We will contact you soon.</span> 
+      </div> 
+     </form> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== CONTACT ===== --> 
+  <section id="contact" class="section"> 
+   <div class="container"> 
+    <h2 class="h2" style="text-align:center">Contact Us</h2> 
+    <p class="lead" style="text-align:center">Village Haroda, District Hapur 245207, Uttar Pradesh • Phone: <b>+91 9917094562</b>, <b>+91 87555 95951</b></p> 
+    <div class="grid" style="margin-top:16px"> 
+     <div class="card"> 
+      <h3>Office Hours</h3> 
+      <p>Mon–Sat • 8:00 AM – 2:00 PM</p> 
+      <h3 style="margin-top:10px">Email</h3> 
+      <p>info@jsdsintercollege.com</p> 
+     </div> 
+     <div class="card"> 
+      <h3>Location</h3> 
+      <p>JSDS Inter College, Village Haroda,<br>District Hapur 245207, Uttar Pradesh</p> 
+     </div> 
+     <div class="card"> 
+      <h3>Documents for Admission</h3> 
+      <ul style="margin-left:16px;line-height:1.9"> 
+       <li>Birth certificate / TC</li> 
+       <li>Previous class mark sheet</li> 
+       <li>2 passport photos</li> 
+       <li>Aadhaar copy</li> 
+      </ul> 
+     </div> 
+    </div> 
+   </div> 
+  </section> 
+  <!-- ===== FOOTER ===== --> 
+  <footer class="section"> 
+   <div class="container foot"> 
+    <div> 
+     <div class="brand"> 
+      <div class="logo">
+        J 
+      </div>JSDS Inter College 
+     </div> 
+     <p class="lead" style="margin-top:8px">Committed to excellence since 2003.</p> 
+    </div> 
+    <div> 
+     <h4>Quick Links</h4> 
+     <ul style="margin-top:8px;line-height:1.9"> 
+      <li><a href="#about">About</a></li> 
+      <li><a href="#facilities">Facilities</a></li> 
+      <li><a href="#admissions">Admissions</a></li> 
+     </ul> 
+    </div> 
+    <div> 
+     <h4>Contact</h4> 
+     <p style="margin-top:8px">📞 +91 9917094562<br>📞 +91 87555 95951<br>✉️ info@jsdsintercollege.com</p> 
+    </div> 
+   </div> 
+   <div class="container" style="padding-top:18px;text-align:center"> 
+    <small>© 2025 JSDS Inter College • Designed with ❤️</small> 
+   </div> 
+  </footer> 
+  <!-- ===== AI ASSISTANT FLOAT ===== --> 
+  <button class="btn" id="aiBtn" title="Ask JSDS Assistant">🤖</button> 
+  <div class="chat" id="chat"> 
+   <header> 
+    <strong>JSDS Assistant</strong> 
+    <div class="toolrow"> 
+     <button class="btn ghost lang" id="langToggle">EN</button> 
+     <button class="btn ghost" id="closeChat">✖</button> 
+    </div> 
+   </header> 
+   <main id="chatMain"> 
+    <div class="msg bot">
+      Hi! I can answer about admissions, fees, facilities, timings, required documents, and more. Try: “What are the school timings?” 
+    </div> 
+   </main> 
+   <footer> 
+    <input id="chatInput" placeholder="Ask your question…"> 
+    <button class="btn ghost voice" id="micBtn" title="Speak">🎙️</button> 
+    <button class="btn" id="sendBtn">Send</button> 
+   </footer> 
+  </div> 
+  <script>
+/* ===== Mobile menu ===== */
+const burger=document.getElementById('burger');
+const menu=document.getElementById('menu');
+if(burger){burger.addEventListener('click',()=>menu.classList.toggle('open'))}
+
+/* ===== Simple slider ===== */
+const slides=[...document.querySelectorAll('.slide')];
+const dotsWrap=document.getElementById('dots');
+let idx=0;
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='dot'+(i===0?' active':'');d.onclick=()=>go(i);dotsWrap.appendChild(d)});
+const dots=[...dotsWrap.children];
+function go(n){slides[idx].classList.remove('active');dots[idx].classList.remove('active');idx=n;slides[idx].classList.add('active');dots[idx].classList.add('active')}
+setInterval(()=>go((idx+1)%slides.length),5000);
+
+/* ===== Principal TTS ===== */
+const principalText = `At JSDS Inter College, we believe education is the art of shaping character and competence together. Our staff works tirelessly to ensure every learner receives attention, guidance, and opportunities to excel.`;
+document.getElementById('ttsPrincipal').onclick=()=>{
+  if('speechSynthesis' in window){
+    const u=new SpeechSynthesisUtterance(principalText);
+    u.lang='en-IN'; speechSynthesis.speak(u);
+  }else alert('Text-to-speech not supported in this browser.');
+}
+
+/* ===== Admissions AI Fill ===== */
+document.getElementById('aiSuggest').onclick=()=>{
+  const nameExamples=["Aarav Sharma","Priya Verma","Rohan Singh","Ananya Gupta"];
+  const pick = nameExamples[Math.floor(Math.random()*nameExamples.length)];
+  const cls = ["9","10","11 (Science)","11 (Commerce)","11 (Arts)","12 (Science)"][Math.floor(Math.random()*6)];
+  const phone = "+91 98" + Math.floor(10000000 + Math.random()*89999999);
+  const f = document.getElementById('adForm');
+  f.name.value=pick; f.class.value=cls; f.phone.value=phone; f.notes.value="Interested in scholarship and transport.";
+};
+document.getElementById('adForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  // You can POST this to your backend/Google Apps Script later.
+  document.getElementById('adSuccess').style.display='inline';
+  e.target.reset();
+  setTimeout(()=>document.getElementById('adSuccess').style.display='none',4000);
+});
+
+/* ===== AI Assistant (rule-based + voice + bilingual) ===== */
+const aiBtn=document.getElementById('aiBtn');
+const chat=document.getElementById('chat');
+const closeChat=document.getElementById('closeChat');
+const sendBtn=document.getElementById('sendBtn');
+const chatInput=document.getElementById('chatInput');
+const chatMain=document.getElementById('chatMain');
+const langToggle=document.getElementById('langToggle');
+let LANG='en'; // 'en' or 'hi'
+
+aiBtn.onclick=()=>{chat.style.display='flex';chatInput.focus();}
+closeChat.onclick=()=>{chat.style.display='none';}
+
+langToggle.onclick=()=>{LANG = (LANG==='en'?'hi':'en'); langToggle.textContent = LANG==='en'?'EN':'HI'; say(botText("language"))}
+
+/* Knowledge base */
+const KB = {
+  timings: {
+    en:"School hours: 8:00 AM – 2:00 PM, Monday to Saturday.",
+    hi:"विद्यालय समय: सोमवार से शनिवार, सुबह 8:00 बजे से दोपहर 2:00 बजे तक।"
+  },
+  fees: {
+    en:"Fee structure varies by class. Merit scholarships are available. Visit the office 9 AM–1 PM for details.",
+    hi:"शुल्क कक्षा के अनुसार अलग-अलग है। मेधावी छात्रवृत्ति उपलब्ध है। अधिक जानकारी के लिए 9 AM–1 PM में कार्यालय आएँ।"
+  },
+  docs: {
+    en:"Bring Birth Certificate/TC, previous mark sheet, 2 photos, and Aadhaar copy for admission.",
+    hi:"प्रवेश हेतु जन्म प्रमाणपत्र/TC, पिछले वर्ष की मार्कशीट, 2 फोटो और आधार की प्रति लाएँ।"
+  },
+  facilities: {
+    en:"Facilities: spacious classrooms, library, science labs, computer lab, sports ground, and safe transport.",
+    hi:"सुविधाएँ: विशाल कक्षाएँ, पुस्तकालय, विज्ञान प्रयोगशालाएँ, कंप्यूटर लैब, खेल मैदान और सुरक्षित परिवहन।"
+  },
+  principal: {
+    en:"Principal: Mr. Ankur Thakur.",
+    hi:"प्रधानाचार्य: श्री अंकुर ठाकुर।"
+  },
+  address: {
+    en:"Address: JSDS Inter College, Village Haroda, District Hapur 245207, Uttar Pradesh.",
+    hi:"पता: जेएसडीएस इंटर कॉलेज, ग्राम हरौदा, जनपद हापुड़ 245207, उत्तर प्रदेश।"
+  },
+  contact: {
+    en:"Phone: +91 9917094562 / +91 87555 95951 • Email: info@jsdsintercollege.com",
+    hi:"फोन: +91 9917094562 / +91 87555 95951 • ईमेल: info@jsdsintercollege.com"
+  },
+  language: {
+    en:"Switched to English.",
+    hi:"हिंदी पर स्विच किया गया।"
+  }
+};
+
+function botText(key){ return (KB[key]?.[LANG]) || (LANG==='en'?"Sorry, I didn’t get that. Try asking about timings, fees, documents, facilities, address, contact, or principal.":"माफ़ कीजिए, समझ नहीं आया। समय, शुल्क, दस्तावेज़, सुविधाएँ, पता, संपर्क या प्रिंसिपल के बारे में पूछें।")}
+
+function addMsg(text,who='bot'){
+  const div=document.createElement('div');
+  div.className='msg '+who;
+  div.textContent=text;
+  chatMain.appendChild(div);
+  chatMain.scrollTop=chatMain.scrollHeight;
+  if(who==='bot' && 'speechSynthesis' in window){
+    const u=new SpeechSynthesisUtterance(text);
+    u.lang = LANG==='en' ? 'en-IN' : 'hi-IN';
+    speechSynthesis.speak(u);
+  }
+}
+
+function handleQuery(q){
+  const s=q.toLowerCase();
+  if(/time|hour|bell|समय|टाइम/.test(s)) return addMsg(botText('timings'));
+  if(/fee|fees|शुल्क|फीस/.test(s)) return addMsg(botText('fees'));
+  if(/doc|document|certificate|tc|दस्तावेज|प्रमाण/.test(s)) return addMsg(botText('docs'));
+  if(/facility|facilities|सुविधा|लैब|library|lab|transport|bus/.test(s)) return addMsg(botText('facilities'));
+  if(/address|location|पता|कहाँ/.test(s)) return addMsg(botText('address'));
+  if(/contact|phone|mobile|call|संपर्क|फोन/.test(s)) return addMsg(botText('contact'));
+  if(/principal|head|प्रिंसिपल|प्रधानाचार्य|ankur/.test(s)) return addMsg(botText('principal'));
+
+  // ===== Optional: plug your own API (OpenAI, etc.) =====
+  // Uncomment and add your endpoint to forward unknown questions:
+  /*
+  fetch('YOUR_AI_ENDPOINT', {method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({question:q, lang:LANG})})
+    .then(r=>r.json()).then(d=>addMsg(d.answer || 'No answer')).catch(()=>addMsg(botText()));
+  */
+  addMsg(botText());
+}
+
+sendBtn.onclick=()=>{
+  const q=chatInput.value.trim(); if(!q) return;
+  addMsg(q,'user'); chatInput.value='';
+  handleQuery(q);
+};
+chatInput.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){sendBtn.click()}
+});
+
+/* Voice input (SpeechRecognition) */
+const micBtn=document.getElementById('micBtn');
+let rec;
+if('webkitSpeechRecognition'in window){ // Chrome
+  rec=new webkitSpeechRecognition(); rec.lang='hi-IN'; rec.interimResults=false; rec.maxAlternatives=1;
+  micBtn.onclick=()=>{
+    rec.lang = LANG==='en' ? 'en-IN' : 'hi-IN';
+    rec.start();
+  };
+  rec.onresult=(ev)=>{ const q=ev.results[0][0].transcript; chatInput.value=q; sendBtn.click(); };
+  rec.onerror=()=>alert(LANG==='en'?'Voice recognition error.':'वॉइस रिकग्निशन त्रुटि।');
+}else{
+  micBtn.onclick=()=>alert(LANG==='en'?'Voice input not supported in this browser.':'इस ब्राउज़र में वॉइस इनपुट समर्थित नहीं है।');
+}
+</script>   
+ </body>
+</html>
